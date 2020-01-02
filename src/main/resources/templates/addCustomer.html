@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Businessman Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png"/>
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <div th:replace="_navbar :: navbar"></div>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:replace="_sidebar :: sidebar"></div>
+        <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-12 grid-margin">
+
+                        <form method="POST" enctype="multipart/form-data" th:action="@{/as}">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Müşteri Bilgileri</h4>
+                                    <form class="form-sample">
+
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Şirket Adı</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Şirket Soyadı</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Yetkili Adı</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Yetkili Soyadı</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Gender</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Erkek</option>
+                                                            <option>Kadın</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Doğum Tarihi</label>
+                                                    <div class="col-sm-9">
+                                                        <input class="form-control" placeholder="gg/aa/yyyy"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Category</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Yazılım</option>
+                                                            <option>Eğitim</option>
+                                                            <option>Danışmanlık</option>
+                                                            <option>Şirket İçi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Üyelik</label>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input"
+                                                                       name="membershipRadios" id="membershipRadios1"
+                                                                       value="" checked>
+                                                                Temel
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-5">
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input"
+                                                                       name="membershipRadios" id="membershipRadios2"
+                                                                       value="option2">
+                                                                Profesyonel
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="card-description">
+                                            Addres
+                                        </p>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Addres 1</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Durum</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Aktif</option>
+                                                            <option>Pasif</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">İletişim No 1</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Email</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Address 2</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Durum</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Aktif</option>
+                                                            <option>Pasif</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">İletişim No 2</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Email</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row-add">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Şehir</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="form-control"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label">Ülke</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Türkiye</option>
+                                                            <option>Amerika</option>
+                                                            <option>Rusya</option>
+                                                            <option>Katalonya</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                         <input type="file" name="file"> <br /> <br />
+
+
+                                        <button type="submit" class="btn btn-inverse-primary btn-fw">Ekle</button>
+                                        <button type="reset" class="btn btn-inverse-danger btn-fw">Temizle</button>
+
+
+
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <div th:replace="_footer :: footer"></div>
+            <!-- partial -->
+            <!-- main-panel ends -->
+        </div>
+    </div>
+    <!-- page-body-wrapper ends -->
+
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="js/Chart.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/template.js"></script>
+<script src="js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/dashboard.js"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>
+

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Businessman Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="images/favicon.png"/>
+</head>
+<body>
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <div th:replace="_navbar :: navbar"></div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <div th:replace="_sidebar :: sidebar"></div>
+        <!-- partial -->
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+
+                    <div class="col-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Personel Ekleme Tablosu</h4>
+                                <form class="form-sample" th:action="@{/addStaffFormSubmit}" method="post" th:object="${staff}" >
+                                    <p class="card-description">
+                                        Ön Bilgi
+                                    </p>
+
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">İsim</label>
+                                                <div class="col-sm-9">
+                                                    <input th:field="*{adi}" type="text" class="form-control" placeholder="İsim"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Soyisim</label>
+                                                <div class="col-sm-9" >
+                                                    <input   th:field="*{soyad}" type="text" class="form-control" placeholder="Soyisim"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Kurum</label>
+                                                <div class="col-sm-9" >
+                                                    <select class="form-control" >
+                                                        <option>ANADOLU SİGORTA</option>
+                                                        <option>BNP PARİBAS CARDİF</option>
+                                                        <option>AXA SİGORTA</option>
+                                                        <option>CİGNA FİNANS</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Sözleşme Türü</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control"  >
+                                                        <option>BAĞKUR</option>
+                                                        <option>SGK</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Sözleşme Süresi</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control" >
+                                                        <option>1 YIL</option>
+                                                        <option>2 YIL</option>
+                                                        <option>3 YIL</option>
+                                                        <option>SÜRESİZ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">İşe Başlama Tarihi</label>
+                                                <div class="col-sm-9">
+                                                    <input type="date" >
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <p class="card-description">
+                                        Kişisel Bilgiler
+                                    </p>
+
+
+
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">TCKN</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control" placeholder="TC Kimlik No"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Doğum Tarihi</label>
+                                                <div class="col-sm-9">
+                                                    <input type="date" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Doğum Yeri</label>
+                                                <div class="col-sm-9">
+                                                    <input   th:field="*{dyeri}" type="text" class="form-control" placeholder="Doğum Yeri"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Kan Grubu</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{kgrubu}"  type="text" class="form-control" placeholder="Kan Grubu"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Telefon 1</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control"  placeholder="Telefon"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Telefon 2</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control" placeholder="Telefon 2"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Açık Adres</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{adres}"  type="text" class="form-control" placeholder="Adres"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Medeni Hali</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control"  >
+                                                        <option>Evli</option>
+                                                        <option>Bekar</option>
+                                                        <option>Dul</option>
+                                                        <option>Boşanmış</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Yakınının Adı Soyadı</label>
+                                                <div class="col-sm-9">
+                                                    <input    th:field="*{yadsoyad}"  type="text" class="form-control"
+                                                           placeholder="Yakının Adı Soyadı"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Yakınının Telefonu</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{ytel}" type="text" class="form-control"
+                                                           placeholder="Yakının Telefon"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Ana Adı</label>
+                                                <div class="col-sm-9">
+                                                    <input    th:field="*{anaad}" type="text" class="form-control" placeholder="Ana Adı"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Baba Adı</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{babaad}" type="text" class="form-control" placeholder="Baba Adı"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Evlenmeden Önceki Soyad</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{eosoyad}" type="text" class="form-control"
+                                                           placeholder="Evlenmeden Önceki Ad-Soyad"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Aylık Maaş</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control" placeholder="Maaş"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Mezun Olduğu Üniversite</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{mouni}" type="text" class="form-control"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Mezun Olduğu Bölüm</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{mobolum}" type="text" class="form-control" placeholder="Üniversite"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Mezuniyet Yılı</label>
+                                                <div class="col-sm-9">
+                                                    <input   class="form-control" placeholder="dd/mm/yyyy"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Askerlik Durumu</label>
+                                                <div class="col-sm-9">
+                                                    <select class="form-control">
+                                                        <option>Yapıldı</option>
+                                                        <option>Yapılmadı</option>
+                                                        <option>Muaf</option>
+                                                        <option>Tecil</option>
+                                                        <option>Kadın</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Geçirilen Ciddi Bir
+                                                    Hastalık</label>
+                                                <div class="col-sm-9">
+                                                    <input   th:field="*{hastalik}" type="text" class="form-control" placeholder="Hastalık"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Kronik Hastalık</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{kronik}" type="text" class="form-control" placeholder="Hastalık"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Nüfusun Kayıtlı Olduğu İl</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{nkil}" type="text" class="form-control" placeholder="İl"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Nüfusun Kayıtlı Olduğu
+                                                    İlçe</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{nkilce}" type="text" class="form-control" placeholder="İlçe"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Mahalle-Köy</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{mahallekoy}" type="text" class="form-control" placeholder="Mahalle-Köy"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Cild No</label>
+                                                <div class="col-sm-9">
+                                                    <input    type="text" class="form-control" placeholder="Cild No"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Aile Sıra No</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control" placeholder="Aile Sıra No"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Sıra No</label>
+                                                <div class="col-sm-9">
+                                                    <input   type="text" class="form-control" placeholder="Sıra No"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Verildiği Yer</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{vyer}" type="text" class="form-control"
+                                                           placeholder="Verildiği Yer"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Veriliş Nedeni</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{vnedeni}" type="text" class="form-control"
+                                                           placeholder="Veriliş Nedeni"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row-add">
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Veriliş Tarihi</label>
+                                                <div class="col-sm-9">
+                                                    <input   type="text" class="form-control"
+                                                           placeholder="Veriliş Tarihi"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Kayıt No</label>
+                                                <div class="col-sm-9">
+                                                    <input  type="text" class="form-control" placeholder="Kayıt No" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row-add">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Çocuk Doğum Tarihi-Ad</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{cocukadtarih}" class="form-control" placeholder="AD-dd/mm/yyyy"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Çocuk Doğum T.</label>
+                                                <div class="col-sm-9">
+                                                    <input  th:field="*{cocukadtarih2}" type="text" class="form-control" placeholder="kayıt No"/>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-inverse-primary btn-fw">Kaydet</button>
+                                    <button type="reset" class="btn btn-inverse-danger btn-fw">Temizle</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:../../partials/_footer.html -->
+                <div th:replace="_footer :: footer"></div>
+
+                <!-- partial -->
+            </div>
+
+            <!-- main-panel ends -->
+        </div>
+    </div>
+    <!-- page-body-wrapper ends -->
+
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<script src="js/Chart.min.js"></script>
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="js/off-canvas.js"></script>
+<script src="js/hoverable-collapse.js"></script>
+<script src="js/template.js"></script>
+<script src="js/todolist.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="js/dashboard.js"></script>
+<!-- End custom js for this page-->
+</body>
+
+</html>
+
