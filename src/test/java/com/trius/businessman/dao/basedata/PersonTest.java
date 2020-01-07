@@ -40,11 +40,11 @@ public class PersonTest {
     public void addPerson() {
 
         Person person = Person.builder()
-                .personName("new")
-                .personSurname("user")
+                .personName("nihat")
+                .personSurname("SANDAL")
                 .personDetail(
                         PersonDetail.builder()
-                                .personDetailChildCount("1")
+                                .personDetailChildCount("2")
                                 .personDetailChronicIll("Bronşit")
                                 .personDetailContactPhone("1234")
                                 .personDetailGraduateYear("2019")
@@ -54,7 +54,7 @@ public class PersonTest {
                                 .build())
                 .personIdentity(
                         PersonIdentity.builder()
-                                .beforeSurname("Nacir")
+                                .beforeSurname("Güzel")
                                 .bindNumber("2")
                                 .birthPlace("Üsküdar")
                                 .birthYear(LocalDateTime.now())

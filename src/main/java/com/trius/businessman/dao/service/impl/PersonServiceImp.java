@@ -15,7 +15,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class PersonServiceImp implements PersonService {
 
@@ -47,12 +49,14 @@ public class PersonServiceImp implements PersonService {
         return personRepository.save(person);
     }
 
+    public Person update(Person person){return  personRepository.save(person);}
 
     @Override
-    public Person deleteByPersonId(Integer id) {
-        return personRepository.deleteByPersonId(id);
-    }
+    public void deletePerson(Integer id) {
 
+        personRepository.delete(personRepository.findByPersonId(id));
+
+    }
 
     @Override
     public List<Person> findAll() {
@@ -92,6 +96,24 @@ public class PersonServiceImp implements PersonService {
         save(person);
 
         return convertPersonToPersonContactDTO(person,newContact);
+    }
+
+    public void deleteAddress(Integer person_id,Integer address_id){
+
+            Person person = personRepository.findByPersonId(person_id);
+            person.getAddressSet().removeAll(person.getAddressSet().stream().filter(address -> address.getAddressId().equals(address_id)).collect(Collectors.toList()));
+            addressRepository.delete(addressRepository.findByAddressId(address_id));
+            personRepository.save(person);
+
+    }
+
+    public void deleteContact(Integer person_id,Integer contact_id){
+
+            Person person = personRepository.findByPersonId(person_id);
+            person.getContactSet().removeAll(person.getContactSet().stream().filter(contact -> contact.getContactId().equals(contact_id)).collect(Collectors.toList()));
+            contactRepository.delete(contactRepository.findByContactId(contact_id));
+            personRepository.save(person);
+
     }
 
 

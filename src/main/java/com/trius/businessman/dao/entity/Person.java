@@ -1,6 +1,8 @@
 package com.trius.businessman.dao.entity;
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -19,6 +21,7 @@ public class Person {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "person_id")
     private Integer personId;
+
 
     @ManyToMany(fetch = FetchType.EAGER, cascade =  {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE})
     @JoinTable(name = "person_address",

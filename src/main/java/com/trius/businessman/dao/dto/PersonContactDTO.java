@@ -12,6 +12,7 @@ import lombok.*;
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonContactDTO {
+
     @JsonProperty("person_id")
     private Integer personId;
 

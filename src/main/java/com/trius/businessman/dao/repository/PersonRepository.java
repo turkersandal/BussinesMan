@@ -8,7 +8,6 @@ import java.util.List;
 public interface PersonRepository extends JpaRepository<Person, Integer> {
     Person findByPersonId(Integer personId);
     Person findByPersonName(String personName);
-    Person deleteByPersonId(Integer personId);
     List<Person> findAll();
 
 }

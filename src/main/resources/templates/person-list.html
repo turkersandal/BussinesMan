@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Person List</title>
+</head>
+<body>
+<h1>Person-List</h1><br>
+
+<table class="table table-striped table-responsive-md">
+
+    <thead>
+    <th>ID</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>University</th>
+
+    </thead>
+
+        <tbody>
+            <tr th:each=" person : ${listPerson}  ">
+
+                <td th:text =${person.personId}></td>
+                <td th:text = ${person.personName}></td>
+                <td th:text = ${person.personSurname}></td>
+                <td th:text = ${person.personDetail.personDetailUniversityName}></td>
+
+
+            </tr>
+
+        </tbody>
+
+
+</table>
+
+
+<table class="table table-striped table-responsive-md">
+
+    <thead>
+    <th>AddressId</th>
+    <th>District</th>
+    <th>Adres Tipi</th>
+    <th>Adres Detayi</th>
+
+    </thead>
+
+    <tbody>
+        <tr th:each=" address : ${listAddress}  ">
+
+        <td th:text =${address.addressId}></td>
+        <td th:text = ${address.district.districtName}></td>
+        <td th:text = ${address.addressType.addressTypeName}></td>
+        <td th:text = ${address.addressDetail}></td>
+
+
+     </tr>
+
+    </tbody>
+
+
+</table>
+
+
+
+</body>
+</html>

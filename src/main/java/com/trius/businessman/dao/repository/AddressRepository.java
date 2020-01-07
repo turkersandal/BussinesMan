@@ -9,6 +9,7 @@ public interface AddressRepository extends JpaRepository<Address,Integer> {
     Address findByDistrict(District district);
     Address findByAddressId(Integer id);
 
+
     /*@Transactional
     void deleteByAddressId(Integer addressId);*/
 }
